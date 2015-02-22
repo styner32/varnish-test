@@ -1,0 +1,7 @@
+.bundle
+log
+tmp
+config/database.yml
+.ruby-version
+.ruby-gemset
+.DS_store

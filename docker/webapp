@@ -1,0 +1,19 @@
+upstream varnish-test {
+  server 127.0.0.1:3000;
+  keepalive 32;
+}
+
+server {
+  listen 80;
+  server_name varnish-test.net;
+
+  location /assets/ {
+    root  /opt/varnish-test/current/public;
+    add_header Access-Control-Allow-Origin *;
+    expires 1d;
+  }
+
+  location / {
+    proxy_pass http://varnish-test;
+  }
+}

@@ -1,0 +1,15 @@
+image_name: styner32/varnish-test
+docker_username: styner32
+docker_host: tcp://192.168.59.103:2375
+application_name: varnish-test
+development:
+  branch: master
+  servers:
+    - host: 192.168.59.103
+      username: root
+      password:
+      port: 2022
+      container:
+        host: 0.0.0.0
+        ssh_port: 6022
+        http_port: 80
